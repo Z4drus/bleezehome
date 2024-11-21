@@ -17,28 +17,28 @@ export default function Component() {
     {
       name: "GitHub",
       description: "Plateforme de développement collaboratif.",
-      logo: "/logo-github.svg",
+      logo: "/logos/logo-github.svg",
       url: "https://github.com/",
       category: "Développement"
     },
     {
       name: "Cursor AI",
       description: "Logiciel IA pour le développement.",
-      logo: "/logo-cursor.svg",
+      logo: "/logos/logo-cursor.svg",
       url: "https://www.cursor.com/",
       category: "Développement"
     },
     {
       name: "v0",
       description: "Site IA pour le développement frontend.",
-      logo: "/logo-v0.svg",
+      logo: "/logos/logo-v0.svg",
       url: "https://v0.dev/",
       category: "Développement"
     },
     {
       name: "Uiverse",
       description: "Répertoire de composants UI.",
-      logo: "/logo-uiverse.svg",
+      logo: "/logos/logo-uiverse.svg",
       url: "https://uiverse.io/",
       category: "Développement"
     }
@@ -47,29 +47,29 @@ export default function Component() {
   const designResources = [
     {
       name: "Dribbble",
-      description: "Inspiration et portfolios design",
-      logo: "/placeholder.svg?height=40&width=40",
+      description: "Inspiration et portfolios design.",
+      logo: "/logos/logo-dribbble.svg",
       url: "https://dribbble.com",
       category: "Design"
     },
     {
       name: "Figma",
-      description: "Outil de design collaboratif",
-      logo: "/placeholder.svg?height=40&width=40",
+      description: "Outil de design collaboratif.",
+      logo: "/logos/logo-figma.svg",
       url: "https://figma.com",
       category: "Design"
     },
     {
       name: "Behance",
-      description: "Plateforme créative Adobe",
-      logo: "/placeholder.svg?height=40&width=40",
+      description: "Plateforme créative Adobe.",
+      logo: "/logos/logo-behance.svg",
       url: "https://behance.net",
       category: "Design"
     },
     {
       name: "Coolors",
-      description: "Générateur de palettes de couleurs",
-      logo: "/placeholder.svg?height=40&width=40",
+      description: "Générateur de palettes de couleurs.",
+      logo: "/logos/logo-coolors.svg",
       url: "https://coolors.co",
       category: "Design"
     }
@@ -78,9 +78,9 @@ export default function Component() {
   return (
     <div className="min-h-screen bg-background p-6">
       <header className="container mx-auto mb-8 flex items-center justify-between">
-        <div>
+        <div className="select-none">
           <h1 className="text-4xl font-bold">Dev / Design Home</h1>
-          <p className="text-muted-foreground">By Bleeze</p>
+          <p className="text-muted-foreground">v0.1 - By Bleeze</p>
         </div>
         <div className="flex gap-2">
           <Dialog open={isPatchNoteOpen} onOpenChange={setIsPatchNoteOpen}>
@@ -92,16 +92,35 @@ export default function Component() {
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>Notes de patch</DialogTitle>
+                <DialogTitle>Patch Notes</DialogTitle>
                 <DialogDescription>
-                  Voici les dernières mises à jour de Dev / Design Home :
+                  Voici les dernières mises à jour du Home :
                 </DialogDescription>
               </DialogHeader>
-              <ul className="list-disc pl-6">
-                <li>Ajout de nouvelles ressources pour le développement</li>
-                <li>Amélioration de l'interface utilisateur</li>
-                <li>Correction de bugs mineurs</li>
-              </ul>
+              <div className="space-y-6">
+                {/* Version 0.3 */}
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800">Version 0.3</h3>
+                  <ul className="list-disc pl-6 text-gray-700">
+                    <li>A venir</li>
+                  </ul>
+                </div>
+                {/* Version 0.2 */}
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800">Version 0.2</h3>
+                  <ul className="list-disc pl-6 text-gray-700">
+                    <li>A venir</li>
+                  </ul>
+                </div>
+
+                {/* Version 0.1*/}
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800">Version 0.1</h3>
+                  <ul className="list-disc pl-6 text-gray-700">
+                    <li>Première version du site mise en ligne.</li>
+                  </ul>
+                </div>
+              </div>
             </DialogContent>
           </Dialog>
           <Dialog open={isSettingsOpen} onOpenChange={setIsSettingsOpen}>
@@ -139,7 +158,7 @@ export default function Component() {
             <TabsTrigger value="dev">Développement</TabsTrigger>
             <TabsTrigger value="design">Design</TabsTrigger>
           </TabsList>
-          
+
           <TabsContent value="dev" className="space-y-6">
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {devResources.map((resource) => (
